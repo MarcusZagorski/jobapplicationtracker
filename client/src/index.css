@@ -1,5 +1,11 @@
+:root {
+  --background: linear-gradient(to right, #ea384d, #d31027);
+}
+
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  background-image: var(--background);
+  font-family: "Inter", sans-serif;
 }
