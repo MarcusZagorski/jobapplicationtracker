@@ -1,7 +1,13 @@
+import { useState } from "react";
 import "./App.css";
+import PageLoad from "./components/PageLoad/PageLoad";
+import Login from "./pages/Login";
 
 function App() {
-  return <>Welcome to my Job Application Tracker</>;
+  const [isLoading, setIsLoading] = useState(true);
+
+  setInterval(() => setIsLoading(false), 3000);
+  return <>{isLoading ? <PageLoad /> : <Login />}</>;
 }
 
 export default App;
