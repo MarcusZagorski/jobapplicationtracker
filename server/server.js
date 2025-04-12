@@ -19,9 +19,9 @@ const db = new Pool({
 
 app.post("/login", async (req, res) => {
   try {
-    const loginField = req.body;
-    const loginCredentials = await db.query("SELECT * FROM login WHERE email = $1", [loginField.email]);
-    const verifyPassword = await argon2.verify(loginCredentials.rows[0].hash_pass, loginField.password);
+    const { email, password } = req.body;
+    const loginCredentials = await db.query("SELECT * FROM login WHERE email = $1", [email]);
+    const verifyPassword = await argon2.verify(loginCredentials.rows[0].hash_pass, password);
 
     if (verifyPassword) {
       res.json({ success: true, message: "Login successful!" });

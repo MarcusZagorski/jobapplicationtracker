@@ -5,8 +5,6 @@ import Login from "./pages/Login";
 function App() {
   const [loginSuccess, setLoginSuccess] = useState(null);
 
-  const loginComponent = <Login loginSuccess={loginSuccess} setLoginSuccess={setLoginSuccess} />;
-
   return !loginSuccess ? (
     <Login loginSuccess={loginSuccess} setLoginSuccess={setLoginSuccess} />
   ) : (
