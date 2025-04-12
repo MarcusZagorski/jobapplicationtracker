@@ -39,7 +39,7 @@ const Login = ({ loginSuccess, setLoginSuccess }) => {
         <h1>JOB APPLICATION TRACKER</h1>
         <h2>Login</h2>
 
-        <htmlForm onSubmit={userLogin}>
+        <form onSubmit={userLogin}>
           <div>
             <label htmlFor="email">Email</label>
             <br />
@@ -58,7 +58,7 @@ const Login = ({ loginSuccess, setLoginSuccess }) => {
           </div>
 
           <button type="submit">Login</button>
-        </htmlForm>
+        </form>
       </div>
     </div>
   );
