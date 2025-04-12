@@ -1,13 +1,17 @@
 import { useState } from "react";
 import "./App.css";
-import PageLoad from "./components/PageLoad/PageLoad";
 import Login from "./pages/Login";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [loginSuccess, setLoginSuccess] = useState(null);
 
-  setInterval(() => setIsLoading(false), 3000);
-  return <>{isLoading ? <PageLoad /> : <Login />}</>;
+  const loginComponent = <Login loginSuccess={loginSuccess} setLoginSuccess={setLoginSuccess} />;
+
+  return !loginSuccess ? (
+    <Login loginSuccess={loginSuccess} setLoginSuccess={setLoginSuccess} />
+  ) : (
+    <p>Dashboard page</p>
+  );
 }
 
 export default App;

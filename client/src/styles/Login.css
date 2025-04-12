@@ -29,6 +29,24 @@ form {
   gap: 36px;
 }
 
+.login__success {
+  width: 100%;
+  height: 1.6rem;
+}
+
+.success,
+.unsuccessful {
+  margin: 0;
+}
+
+.success {
+  color: green;
+}
+
+.unsuccessful {
+  color: red;
+}
+
 #email,
 #password {
   width: -webkit-fill-available;

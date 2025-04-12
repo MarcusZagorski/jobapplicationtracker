@@ -1,11 +1,17 @@
 import express from "express";
+import cors from "cors";
 import "dotenv/config";
 import pg from "pg";
 import argon2 from "argon2";
 const { Pool } = pg;
 
 const app = express();
-app.use(express.json());
+app.use(
+  express.json(),
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 const PORT = process.env.PORT;
 const db = new Pool({
   connectionString: process.env.DB_STRING,
